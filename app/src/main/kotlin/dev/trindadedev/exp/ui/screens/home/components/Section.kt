@@ -154,7 +154,7 @@ private fun ProjectItemInfo(
     .fillMaxWidth()
     .padding(horizontal = 8.dp, vertical = 10.dp)
 ) {
-  Column(modifier = modifier) {
+  Row(modifier = modifier) {
     Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
       Icon(
         imageVector = Icons.Filled.Favorite,
