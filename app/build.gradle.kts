@@ -22,7 +22,7 @@ android {
   }
   
   compileOptions {
-    sourceCompatibility = JavaVersion.toVersion(libs.versions.android.jvm.get().toInt()
+    sourceCompatibility = JavaVersion.toVersion(libs.versions.android.jvm.get().toInt())
     targetCompatibility = JavaVersion.toVersion(libs.versions.android.jvm.get().toInt())
   }
     
