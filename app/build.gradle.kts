@@ -19,49 +19,49 @@ android {
     vectorDrawables.useSupportLibrary = true
     
     buildConfigField("String", "SKETCHUB_API_KEY", "\"${System.getenv("SKETCHUB_API_KEY") ?: ""}\"")
+  }
+  
+  compileOptions {
+    sourceCompatibility = JavaVersion.toVersion(libs.versions.android.jvm.get().toInt()
+    targetCompatibility = JavaVersion.toVersion(libs.versions.android.jvm.get().toInt())
+  }
     
-    compileOptions {
-      sourceCompatibility = JavaVersion.toVersion(libs.versions.android.jvm.get().toInt()
-      targetCompatibility = JavaVersion.toVersion(libs.versions.android.jvm.get().toInt())
+  kotlinOptions {
+    jvmTarget = libs.versions.android.jvm.get()
+  }
+    
+  buildFeatures {
+    compose = true
+    buildConfig = true
+  }
+    
+  packaging {
+    resources {
+      excludes += "/META-INF/{AL2.0,LGPL2.1}"
     }
+  }
     
-    kotlinOptions {
-      jvmTarget = libs.versions.android.jvm.get()
+  signingConfigs {
+    create("release") {
+      // temporary keystore
+      storeFile = file(layout.buildDirectory.dir("../release_key.jks"))
+      storePassword = "release_temp"
+      keyAlias = "release_temp"
+      keyPassword = "release_temp"
     }
-    
-    buildFeatures {
-      compose = true
-      buildConfig = true
+    getByName("debug") {
+      storeFile = file(layout.buildDirectory.dir("../testkey.keystore"))
+      storePassword = "testkey"
+      keyAlias = "testkey"
+      keyPassword = "testkey"
     }
+  }
     
-    packaging {
-      resources {
-        excludes += "/META-INF/{AL2.0,LGPL2.1}"
-      }
-    }
-    
-    signingConfigs {
-      create("release") {
-        // temporary keystore
-        storeFile = file(layout.buildDirectory.dir("../release_key.jks"))
-        storePassword = "release_temp"
-        keyAlias = "release_temp"
-        keyPassword = "release_temp"
-      }
-      getByName("debug") {
-        storeFile = file(layout.buildDirectory.dir("../testkey.keystore"))
-        storePassword = "testkey"
-        keyAlias = "testkey"
-        keyPassword = "testkey"
-      }
-    }
-    
-    buildTypes {
-      release {
-        isMinifyEnabled = true
-        proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        signingConfig = signingConfigs.getByName("release")
-      }
+  buildTypes {
+    release {
+      isMinifyEnabled = true
+      proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+      signingConfig = signingConfigs.getByName("release")
     }
   }
 }
