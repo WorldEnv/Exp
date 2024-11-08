@@ -32,7 +32,9 @@ import androidx.compose.ui.res.*
 import androidx.compose.ui.text.font.*
 import androidx.compose.ui.text.style.*
 import androidx.compose.ui.unit.*
+
 import coil3.compose.AsyncImage
+
 import dev.trindadedev.exp.api.models.Project
 
 /*

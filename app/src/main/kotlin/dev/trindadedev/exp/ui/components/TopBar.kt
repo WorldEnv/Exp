@@ -31,11 +31,29 @@ fun TopBar(
   scrollBehavior: TopAppBarScrollBehavior,
   navigationIcon: @Composable (() -> Unit)? = null,
   actions: @Composable RowScope.() -> Unit = {},
+  isLarge: Boolean = false
 ) {
-  TopAppBar(
-    title = title,
-    navigationIcon = { navigationIcon?.let { it() } },
-    actions = actions,
-    scrollBehavior = scrollBehavior,
-  )
+  if (!isLarge) {
+    TopAppBar(
+      title = title,
+      navigationIcon = {
+        navigationIcon?.let {
+           it()
+        } 
+      },
+      actions = actions,
+      scrollBehavior = scrollBehavior,
+    )
+  } else {
+    LargeTopAppBar(
+      title = title,
+      navigationIcon = {
+        navigationIcon?.let {
+           it()
+        } 
+      },
+      actions = actions,
+      scrollBehavior = scrollBehavior,
+    )
+  }
 }

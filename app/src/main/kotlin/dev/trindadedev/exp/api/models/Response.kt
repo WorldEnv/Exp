@@ -24,4 +24,8 @@ import kotlinx.serialization.Serializable
  */
 
 @Serializable
-data class ApiResponse(val status: String, val total_pages: String, val projects: List<Project>)
+data class Response(
+  val status: String, 
+  val total_pages: String, 
+  val projects: List<Project>
+)

@@ -1,4 +1,4 @@
-package dev.trindadedev.exp.api
+package dev.trindadedev.exp.api.viewmodel
 
 /*
  *  This file is part of Exp © 2024.
@@ -19,8 +19,11 @@ package dev.trindadedev.exp.api
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+
+import dev.trindadedev.exp.api.Type
 import dev.trindadedev.exp.api.models.Project
-import dev.trindadedev.exp.api.repo.ProjectsRepository
+import dev.trindadedev.exp.api.repository.ProjectsRepository
+
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -29,7 +32,7 @@ import kotlinx.coroutines.launch
  * View model used for manage Api projects  etc
  */
 
-class ApiViewModel(private val repo: ProjectsRepository) : ViewModel() {
+class ProjectsViewModel(private val repo: ProjectsRepository) : ViewModel() {
 
   // private lists of projects
   private val _editorChoiceProjects = MutableStateFlow<List<Project>>(emptyList())
