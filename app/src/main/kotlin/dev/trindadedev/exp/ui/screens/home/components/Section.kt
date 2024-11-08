@@ -78,12 +78,13 @@ private fun ProjectsList(projects: List<Project>, onProjectClicked: (Project) ->
 @Composable
 private fun ProjectItem(
   project: Project, 
-  onProjectClicked: (Project) -> Unit
+  onProjectClicked: (Project) -> Unit,
+  modifier: Modifier = Modifier
+    .width(150.dp)
+    .padding(end = 8.dp, start = 8.dp),
 ) {
   OutlinedCard(
-    modifier = Modifier
-      .width(150.dp)
-      .padding(end = 8.dp, start = 8.dp),
+    modifier = modifier,
     shape = MaterialTheme.shapes.large,
     colors = CardDefaults.outlinedCardColors(containerColor = MaterialTheme.colorScheme.surfaceContainer),
     onClick = { onProjectClicked(project) }
@@ -106,14 +107,17 @@ private fun ProjectItem(
  * @param title A String of Title value
  */
 @Composable
-private fun ProjectItemTitle(title: String) {
+private fun ProjectItemTitle(
+  title: String,
+  modifier: Modifier = Modifier.padding(horizontal = 8.dp)
+) {
   Text(
     text = title,
     style = MaterialTheme.typography.titleMedium
       .copy(fontWeight = FontWeight.Bold),
     overflow = TextOverflow.Ellipsis,
     maxLines = 1,
-    modifier = Modifier.padding(horizontal = 8.dp),
+    modifier = modifier
   )
 }
 
@@ -122,15 +126,18 @@ private fun ProjectItemTitle(title: String) {
  * @param model a Url of project icon
  */
 @Composable
-private fun ProjectItemIcon(model: String) {
+private fun ProjectItemIcon(
+  model: String,
+  modifier: Modifier = Modifier
+    .fillMaxWidth()
+    .height(100.dp)
+    .clip(RoundedCornerShape(0.dp)),
+) {
   AsyncImage(
     model = model,
     contentDescription = "Project Image",
     contentScale = ContentScale.Crop,
-    modifier = Modifier
-      .fillMaxWidth()
-      .height(100.dp)
-      .clip(RoundedCornerShape(0.dp)),
+    modifier = modifier
   )
 }
 
@@ -142,12 +149,12 @@ private fun ProjectItemIcon(model: String) {
 @Composable
 private fun ProjectItemInfo(
   likes: String,
-  downloads: String
+  downloads: String,
+  modifier: Modifier = Modifier
+    .fillMaxWidth()
+    .padding(horizontal = 8.dp, vertical = 10.dp)
 ) {
-  Column(
-    modifier = Modifier.fillMaxWidth()
-      .padding(horizontal = 8.dp, vertical = 10.dp)
-  ) {
+  Column(modifier = modifier) {
     Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
       Icon(
         imageVector = Icons.Filled.Favorite,
