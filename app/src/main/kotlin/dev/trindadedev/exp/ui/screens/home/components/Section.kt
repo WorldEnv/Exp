@@ -81,13 +81,12 @@ private fun ProjectItem(
   onProjectClicked: (Project) -> Unit
 ) {
   OutlinedCard(
-    modifier =
-      Modifier.width(130.dp).padding(end = 8.dp, start = 8.dp).clickable {
-        onProjectClicked(project)
-      },
+    modifier = Modifier
+      .width(150.dp)
+      .padding(end = 8.dp, start = 8.dp),
     shape = MaterialTheme.shapes.large,
-    colors =
-      CardDefaults.outlinedCardColors(containerColor = MaterialTheme.colorScheme.surfaceContainer),
+    colors = CardDefaults.outlinedCardColors(containerColor = MaterialTheme.colorScheme.surfaceContainer),
+    onClick = { onProjectClicked(project) }
   ) {
     Column(modifier = Modifier.fillMaxWidth()) {
       ProjectItemIcon(model = project.icon)
