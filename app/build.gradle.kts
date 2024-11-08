@@ -56,13 +56,7 @@ dependencies {
   implementation(libs.androidx.core.splashscreen)
   implementation(libs.androidx.lifecycle.runtime.ktx)
     
-  implementation(libs.compose.ui)
-  implementation(libs.compose.ui.graphics)
-  implementation(libs.compose.activity)
   implementation(libs.compose.material.motion.core)
-  implementation(libs.compose.material.icons)
-  implementation(libs.compose.material3)
-  implementation(libs.compose.navigation)
   implementation(libs.compose.coil)
     
   implementation(libs.coil.network.okhttp)
