@@ -17,15 +17,6 @@ android {
     
     buildConfigField("String", "SKETCHUB_API_KEY", "\"${System.getenv("SKETCHUB_API_KEY") ?: ""}\"")
   }
-  
-  compileOptions {
-    sourceCompatibility = JavaVersion.toVersion(libs.versions.android.jvm.get().toInt())
-    targetCompatibility = JavaVersion.toVersion(libs.versions.android.jvm.get().toInt())
-  }
-    
-  kotlinOptions {
-    jvmTarget = libs.versions.android.jvm.get()
-  }
     
   packaging {
     resources {
