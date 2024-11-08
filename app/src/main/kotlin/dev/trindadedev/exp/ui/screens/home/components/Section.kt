@@ -154,33 +154,33 @@ private fun ProjectItemInfo(
     .fillMaxWidth()
     .padding(horizontal = 8.dp, vertical = 10.dp)
 ) {
-  Row(modifier = modifier) {
-    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+  Row(modifier = modifier, horizontalArrangement = Arrangement.SpaceBetween) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
       Icon(
         imageVector = Icons.Filled.Favorite,
         contentDescription = "Likes",
         tint = MaterialTheme.colorScheme.onSurfaceVariant,
-        modifier = Modifier.size(15.dp),
+        modifier = Modifier.size(15.dp)
       )
       Spacer(modifier = Modifier.width(4.dp))
       Text(
         text = likes,
         style = MaterialTheme.typography.bodySmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        color = MaterialTheme.colorScheme.onSurfaceVariant
       )
     }
-    Spacer(modifier = Modifier.height(6.dp))
-    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
       Icon(
         imageVector = Icons.Filled.CloudDownload,
         contentDescription = "Downloads",
-        modifier = Modifier.size(15.dp),
+        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+        modifier = Modifier.size(15.dp)
       )
       Spacer(modifier = Modifier.width(4.dp))
       Text(
         text = downloads,
         style = MaterialTheme.typography.bodySmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        color = MaterialTheme.colorScheme.onSurfaceVariant
       )
     }
   }
