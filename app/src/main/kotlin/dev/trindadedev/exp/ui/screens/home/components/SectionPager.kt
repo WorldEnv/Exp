@@ -94,7 +94,6 @@ private fun ProjectItem(project: Project, onProjectClicked: (Project) -> Unit) {
         modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp),
         verticalArrangement = Arrangement.Bottom,
       ) {
-        // Ícone do projeto
         AsyncImage(
           model = project.icon,
           contentDescription = "Project Icon",
