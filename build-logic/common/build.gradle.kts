@@ -20,7 +20,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   id("java-library")
-  id("org.jetbrains.kotlin.jvm")
+  alias(libs.plugins.kotlin.jvm)
 }
 
 tasks.withType<KotlinCompile>().configureEach {
