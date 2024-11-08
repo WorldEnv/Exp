@@ -82,7 +82,7 @@ private fun ProjectItem(project: Project, onProjectClicked: (Project) -> Unit) {
       Modifier.width(130.dp).padding(end = 8.dp, start = 8.dp).clickable {
         onProjectClicked(project)
       },
-    shape = RoundedCornerShape(10.dp),
+    shape = MaterialTheme.shapes.large,
     colors =
       CardDefaults.outlinedCardColors(containerColor = MaterialTheme.colorScheme.surfaceContainer),
   ) {
