@@ -136,7 +136,7 @@ private fun ProjectItemIcon(
   AsyncImage(
     model = model,
     contentDescription = "Project Image",
-    contentScale = ContentScale.Crop,
+    contentScale = ContentScale.Fit,
     modifier = modifier
   )
 }
