@@ -27,6 +27,8 @@ koin = "4.0.0"
 
 slf4j = "1.7.36"
 
+ksp = "2.0.21-1.0.26"
+
 [plugins]
 # Android Gradle Plugin
 agp-library = { id = "com.android.library", version.ref = "agp" }
@@ -39,6 +41,10 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 
 # Compose
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+exp-application = { id = "exp.application", version = "unspecified" }
+exp-library = { id = "exp.library", version = "unspecified" }
+exp-compose = { id = "exp.compose", version = "unspecified" }
 
 [libraries]
 
@@ -77,3 +83,8 @@ slf4j = { group = "org.slf4j", name = "slf4j-android", version.ref = "slf4j" }
 # Koin
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin"}
 koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin"}
+
+android-gradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+compose-gradle = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
+kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-gradle = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }

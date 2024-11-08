@@ -1,17 +1,14 @@
 plugins {
-  alias(libs.plugins.agp.application)
-  alias(libs.plugins.kotlin.android)
+  alias(libs.plugins.exp.application)
+  alias(libs.plugins.exp.compose)
   alias(libs.plugins.kotlin.serialization)
   alias(libs.plugins.compose.compiler)
 }
 
 android {
   namespace = "dev.trindadedev.exp"
-  compileSdk = libs.versions.android.compileSdk.get().toInt()
   
   defaultConfig {
-    minSdk = libs.versions.android.minSdk.get().toInt()
-    targetSdk = libs.versions.android.targetSdk.get().toInt()
     applicationId = "dev.trindadedev.exp"
     versionCode = 1
     versionName = "1.0"
@@ -28,11 +25,6 @@ android {
     
   kotlinOptions {
     jvmTarget = libs.versions.android.jvm.get()
-  }
-    
-  buildFeatures {
-    compose = true
-    buildConfig = true
   }
     
   packaging {
