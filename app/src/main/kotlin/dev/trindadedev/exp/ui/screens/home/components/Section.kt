@@ -130,13 +130,12 @@ private fun ProjectItemIcon(
   model: String,
   modifier: Modifier = Modifier
     .fillMaxWidth()
-    .height(100.dp)
-    .clip(RoundedCornerShape(0.dp)),
+    .height(120.dp)
 ) {
   AsyncImage(
     model = model,
     contentDescription = "Project Image",
-    contentScale = ContentScale.Fit,
+    contentScale = ContentScale.Crop,
     modifier = modifier
   )
 }
