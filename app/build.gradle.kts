@@ -1,4 +1,5 @@
 import dev.trindadedev.exp.build.BuildConfig
+import dev.trindadedev.exp.build.BuildConfig.Secrets
 import dev.trindadedev.exp.build.VersionUtils
 
 plugins {
@@ -17,7 +18,7 @@ android {
     
     vectorDrawables.useSupportLibrary = true
     
-    buildConfigField("String", "SKETCHUB_API_KEY", "\"${System.getenv("SKETCHUB_API_KEY") ?: ""}\"")
+    buildConfigField("String", "SKETCHUB_API_KEY", Secrets.sketchubApiKey)
   }
     
   packaging {

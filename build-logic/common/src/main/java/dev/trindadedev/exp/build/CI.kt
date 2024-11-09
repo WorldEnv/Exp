@@ -21,18 +21,24 @@ import java.io.File
 
 object CI {
 
-  /** The short commit hash. */
+  /*
+   * The short commit hash.
+   */
   val commitHash by lazy {
     val sha = System.getenv("GITHUB_SHA") ?: return@lazy ""
     shortSha(sha)
   }
 
-  /** Name of the current branch. */
+  /*
+   * Name of the current branch. 
+   */
   val branchName by lazy {
-    System.getenv("GITHUB_REF_NAME") ?: "dev" // by default, 'dev'
+    System.getenv("GITHUB_REF_NAME") ?: "dev"
   }
 
-  /** Whether the current build is a CI build. */
+  /*
+   * Whether the current build is a CI build. 
+   */
   val isCiBuild by lazy {
     "true" == System.getenv("CI") 
   }
@@ -46,5 +52,17 @@ object CI {
       .bufferedReader()
       .readText()
       .trim()
+  }
+  
+  /*
+   * GitHub Secrets
+   */
+  object Secrets {
+    /*
+     * Sketchub Api Key for api
+     */
+    val sketchubApiKey by lazy {
+      System.getenv("SKETCHUB_API_KEY") ?: ""
+    }
   }
 }
