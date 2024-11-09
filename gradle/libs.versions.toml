@@ -26,7 +26,7 @@ koin = "4.0.0"
 
 slf4j = "1.7.36"
 
-ksp = "2.0.21-1.0.26"
+ksp = "2.0.21-1.0.27"
 
 [plugins]
 # Android Gradle Plugin
