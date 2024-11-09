@@ -20,9 +20,7 @@ package dev.trindadedev.exp.build
 @SuppressWarnings("unused")
 object BuildConfig {
   const val packageName = "dev.trindadedev.exp"
-  const val corePackageName = "dev.trindadedev.exp.core"
-  const val featurePackageName = "dev.trindadedev.exp.feature"
-  
+
   const val compileSdk = 35
   const val buildTools = "35.0.0"
   const val minSdk = 26

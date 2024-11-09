@@ -19,11 +19,6 @@ package dev.trindadedev.exp.build
 
 import java.io.File
 
-/**
- * Information about the CI build.
- *
- * @author Akash Yadav
- */
 object CI {
 
   /** The short commit hash. */
