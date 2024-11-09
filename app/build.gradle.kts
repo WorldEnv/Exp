@@ -1,17 +1,19 @@
+import dev.trindadedev.exp.build.BuildConfig
+import dev.trindadedev.exp.build.VersionUtils
+
 plugins {
   alias(libs.plugins.exp.application)
   alias(libs.plugins.exp.compose)
   alias(libs.plugins.kotlin.serialization)
-  alias(libs.plugins.compose.compiler)
 }
 
 android {
-  namespace = "dev.trindadedev.exp"
+  namespace = BuildConfig.packageName
   
   defaultConfig {
-    applicationId = "dev.trindadedev.exp"
-    versionCode = 1
-    versionName = "1.0"
+    applicationId = namespace
+    versionCode = VersionUtils.versionCode
+    versionName = VersionUtils.versionName
     
     vectorDrawables.useSupportLibrary = true
     
