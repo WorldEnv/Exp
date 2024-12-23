@@ -22,7 +22,7 @@ kotlin-serialization-json = "1.8.0"
 
 coil-kt = "3.0.4"
 ktor = "3.0.3"
-koin = "4.0.0"
+koin = "4.0.1"
 
 slf4j = "1.7.36"
 
