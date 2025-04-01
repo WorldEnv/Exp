@@ -25,7 +25,6 @@ import androidx.compose.ui.*
 import androidx.compose.ui.input.nestedscroll.*
 import androidx.compose.ui.layout.*
 import androidx.compose.ui.res.*
-
 import dev.trindadedev.exp.Strings
 import dev.trindadedev.exp.api.models.Project
 import dev.trindadedev.exp.ui.components.TopBar

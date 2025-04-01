@@ -33,9 +33,7 @@ object CI {
   }
 
   /** Whether the current build is a CI build. */
-  val isCiBuild by lazy {
-    "true" == System.getenv("CI") 
-  }
+  val isCiBuild by lazy { "true" == System.getenv("CI") }
 
   private fun shortSha(sha: String): String {
     return ProcessBuilder("git", "rev-parse", "--short", sha)

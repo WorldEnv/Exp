@@ -18,9 +18,7 @@ package dev.trindadedev.exp
  */
 
 import android.app.Application
-
 import dev.trindadedev.exp.di.NetworkModule
-
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

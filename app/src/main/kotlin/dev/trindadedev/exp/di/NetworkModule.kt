@@ -17,16 +17,13 @@ package dev.trindadedev.exp.di
  *   along with Exp.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import dev.trindadedev.exp.api.viewmodel.ProjectsViewModel
 import dev.trindadedev.exp.api.repository.ProjectsRepository
-
+import dev.trindadedev.exp.api.viewmodel.ProjectsViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.serialization.kotlinx.json.json
-
 import kotlinx.serialization.json.Json
-
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
@@ -38,14 +35,6 @@ val NetworkModule = module {
   singleOf(::ProjectsRepository)
   viewModelOf(::ProjectsViewModel)
   single {
-    HttpClient(Android) {
-      install(ContentNegotiation) {
-        json(
-          Json {
-            ignoreUnknownKeys = true 
-          }
-        )
-      }
-    }
+    HttpClient(Android) { install(ContentNegotiation) { json(Json { ignoreUnknownKeys = true }) } }
   }
 }

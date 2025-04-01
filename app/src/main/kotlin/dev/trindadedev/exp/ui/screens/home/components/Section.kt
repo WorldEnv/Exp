@@ -32,9 +32,7 @@ import androidx.compose.ui.res.*
 import androidx.compose.ui.text.font.*
 import androidx.compose.ui.text.style.*
 import androidx.compose.ui.unit.*
-
 import coil3.compose.AsyncImage
-
 import dev.trindadedev.exp.api.models.Project
 
 /*
@@ -79,27 +77,23 @@ private fun ProjectsList(projects: List<Project>, onProjectClicked: (Project) ->
  */
 @Composable
 private fun ProjectItem(
-  project: Project, 
+  project: Project,
   onProjectClicked: (Project) -> Unit,
-  modifier: Modifier = Modifier
-    .width(150.dp)
-    .padding(end = 8.dp, start = 8.dp),
+  modifier: Modifier = Modifier.width(150.dp).padding(end = 8.dp, start = 8.dp),
 ) {
   OutlinedCard(
     modifier = modifier,
     shape = MaterialTheme.shapes.large,
-    colors = CardDefaults.outlinedCardColors(containerColor = MaterialTheme.colorScheme.surfaceContainer),
-    onClick = { onProjectClicked(project) }
+    colors =
+      CardDefaults.outlinedCardColors(containerColor = MaterialTheme.colorScheme.surfaceContainer),
+    onClick = { onProjectClicked(project) },
   ) {
     Column(modifier = Modifier.fillMaxWidth()) {
       ProjectItemIcon(model = project.icon)
       Spacer(modifier = Modifier.height(8.dp))
       ProjectItemTitle(title = project.title)
       Spacer(modifier = Modifier.height(4.dp))
-      ProjectItemInfo(
-        likes = project.likes.toString(),
-        downloads = project.downloads.toString()
-      )
+      ProjectItemInfo(likes = project.likes.toString(), downloads = project.downloads.toString())
     }
   }
 }
@@ -111,15 +105,14 @@ private fun ProjectItem(
 @Composable
 private fun ProjectItemTitle(
   title: String,
-  modifier: Modifier = Modifier.padding(horizontal = 8.dp)
+  modifier: Modifier = Modifier.padding(horizontal = 8.dp),
 ) {
   Text(
     text = title,
-    style = MaterialTheme.typography.titleMedium
-      .copy(fontWeight = FontWeight.Bold),
+    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
     overflow = TextOverflow.Ellipsis,
     maxLines = 1,
-    modifier = modifier
+    modifier = modifier,
   )
 }
 
@@ -130,15 +123,13 @@ private fun ProjectItemTitle(
 @Composable
 private fun ProjectItemIcon(
   model: String,
-  modifier: Modifier = Modifier
-    .fillMaxWidth()
-    .height(120.dp)
+  modifier: Modifier = Modifier.fillMaxWidth().height(120.dp),
 ) {
   AsyncImage(
     model = model,
     contentDescription = "Project Image",
     contentScale = ContentScale.Crop,
-    modifier = modifier
+    modifier = modifier,
   )
 }
 
@@ -151,9 +142,7 @@ private fun ProjectItemIcon(
 private fun ProjectItemInfo(
   likes: String,
   downloads: String,
-  modifier: Modifier = Modifier
-    .fillMaxWidth()
-    .padding(horizontal = 8.dp, vertical = 10.dp)
+  modifier: Modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 10.dp),
 ) {
   Row(modifier = modifier, horizontalArrangement = Arrangement.SpaceBetween) {
     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -161,13 +150,13 @@ private fun ProjectItemInfo(
         imageVector = Icons.Filled.Favorite,
         contentDescription = "Likes",
         tint = MaterialTheme.colorScheme.onSurfaceVariant,
-        modifier = Modifier.size(15.dp)
+        modifier = Modifier.size(15.dp),
       )
       Spacer(modifier = Modifier.width(4.dp))
       Text(
         text = likes,
         style = MaterialTheme.typography.bodySmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
       )
     }
     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -175,13 +164,13 @@ private fun ProjectItemInfo(
         imageVector = Icons.Filled.CloudDownload,
         contentDescription = "Downloads",
         tint = MaterialTheme.colorScheme.onSurfaceVariant,
-        modifier = Modifier.size(15.dp)
+        modifier = Modifier.size(15.dp),
       )
       Spacer(modifier = Modifier.width(4.dp))
       Text(
         text = downloads,
         style = MaterialTheme.typography.bodySmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
       )
     }
   }

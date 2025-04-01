@@ -18,14 +18,12 @@ package dev.trindadedev.exp.api.repository
  */
 
 import android.util.Log
-
 import dev.trindadedev.exp.api.Consts.Routes.PROJECTS_ROUTE
 import dev.trindadedev.exp.api.Consts.Tokens.API_KEY
 import dev.trindadedev.exp.api.Consts.URL
 import dev.trindadedev.exp.api.Type
-import dev.trindadedev.exp.api.models.Response
 import dev.trindadedev.exp.api.models.Project
-
+import dev.trindadedev.exp.api.models.Response
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.engine.android.*
@@ -33,7 +31,6 @@ import io.ktor.client.request.*
 import io.ktor.client.request.forms.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
-
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 

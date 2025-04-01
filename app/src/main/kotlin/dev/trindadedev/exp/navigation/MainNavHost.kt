@@ -18,12 +18,10 @@ package dev.trindadedev.exp.navigation
  */
 
 import android.util.Log
-
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
-
 import dev.trindadedev.exp.api.models.Project
 import dev.trindadedev.exp.navigation.navtype.CustomNavType
 import dev.trindadedev.exp.navigation.routes.*
@@ -31,7 +29,6 @@ import dev.trindadedev.exp.platform.LocalMainNavController
 import dev.trindadedev.exp.ui.animations.navigation.NavigationAnimationTransitions
 import dev.trindadedev.exp.ui.screens.home.HomeScreen
 import dev.trindadedev.exp.ui.screens.project.details.ProjectDetailsScreen
-
 import kotlin.reflect.typeOf
 
 @Composable

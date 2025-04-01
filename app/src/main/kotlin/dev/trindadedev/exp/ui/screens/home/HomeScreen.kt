@@ -25,7 +25,6 @@ import androidx.compose.ui.*
 import androidx.compose.ui.input.nestedscroll.*
 import androidx.compose.ui.layout.*
 import androidx.compose.ui.res.*
-
 import dev.trindadedev.exp.Strings
 import dev.trindadedev.exp.api.Type
 import dev.trindadedev.exp.api.models.Project
@@ -33,7 +32,6 @@ import dev.trindadedev.exp.api.viewmodel.ProjectsViewModel
 import dev.trindadedev.exp.ui.components.TopBar
 import dev.trindadedev.exp.ui.screens.home.components.Section
 import dev.trindadedev.exp.ui.screens.home.components.SectionPager
-
 import org.koin.androidx.compose.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)

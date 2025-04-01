@@ -19,7 +19,6 @@ package dev.trindadedev.exp.ui.theme
 
 import android.app.Activity
 import android.os.Build
-
 import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

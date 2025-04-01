@@ -19,11 +19,9 @@ package dev.trindadedev.exp.api.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-
 import dev.trindadedev.exp.api.Type
 import dev.trindadedev.exp.api.models.Project
 import dev.trindadedev.exp.api.repository.ProjectsRepository
-
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
